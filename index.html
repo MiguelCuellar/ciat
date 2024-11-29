@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Ambiental</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <img src="https://alliancebioversityciat.org/sites/default/files/styles/1920_scale/public/images/Alliance%20Logo%20Refresh-color.jpg?itok=aWZGtycl" alt="Alliance Bioversity & CIAT" class="logo">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Devices & Sensors</a></li>
+                <li><a href="#">Logs</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+            <div class="user-icon">👤</div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Calidad del aire</h3>
+                <div >
+                    <canvas id="airQualityGauge"></canvas>
+                </div>
+                <h2>80%</h2>
+            </div>
+            <div class="metric-card">
+                <h3>Temperatura °C</h3>
+                <div class="metric-value">500000<span>°C</span></div>
+                <h3>Temperatura °F</h3>
+                <div class="metric-value">93,2<span>°F</span></div>
+            </div>
+            <div class="metric-card">
+                <h3>Humedad</h3>
+                <div class="metric-value">67<span>%</span></div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-card gas-monitor">
+                <h3>Medidor de gas</h3>
+                <div class="monitor-display">
+                    <div class="co2-value">508</div>
+                    <div class="co2-unit">PPM</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div>
+        <button>Hola</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
