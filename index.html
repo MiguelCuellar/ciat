@@ -10,12 +10,21 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <img src="https://alliancebioversityciat.org/sites/default/files/styles/1920_scale/public/images/Alliance%20Logo%20Refresh-color.jpg?itok=aWZGtycl" alt="Alliance Bioversity & CIAT" class="logo">
+            <div>
+                <img src="https://th.bing.com/th/id/OIP.4CajgPZWU35WAAt8oaAM1gAAAA?rs=1&pid=ImgDetMain" alt="Alliance Bioversity & CIAT" class="logo">
+                <img src="https://www.soydebuenaventura.com/media/img/20230802_logosena-359_351.png" alt="Logo sena" class="logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="#" class="active">Dashboard</a></li>
                 <li><a href="#">Devices & Sensors</a></li>
                 <li><a href="#">Logs</a></li>
                 <li><a href="#">Settings</a></li>
+                <li>
+                    <button onclick="toggleTheme()" class="theme-toggle">
+                        <img src="img/sun-icon.png" alt="Tema claro" class="theme-icon light-icon" width="24" height="24">
+                        <img src="img/moon-icon.png" alt="Tema oscuro" class="theme-icon dark-icon" width="24" height="24">
+                    </button>
+                </li>
             </ul>
             <div class="user-icon">👤</div>
         </div>
@@ -25,20 +34,31 @@
         <div class="metrics-grid">
             <div class="metric-card">
                 <h3>Calidad del aire</h3>
-                <div >
+                <div class="gauge-container">
                     <canvas id="airQualityGauge"></canvas>
+                    <div id="airQualityPercentage" class="gauge-percentage">--%</div>
                 </div>
-                <h2>80%</h2>
             </div>
             <div class="metric-card">
                 <h3>Temperatura °C</h3>
-                <div class="metric-value">500000<span>°C</span></div>
+                <div class="metric-value">
+                    <span id="temperatureC">--</span>
+                    <span class="unit">°C</span>
+                </div>
+            </div>
+            <div class="metric-card">
                 <h3>Temperatura °F</h3>
-                <div class="metric-value">93,2<span>°F</span></div>
+                <div class="metric-value">
+                    <span id="temperatureF">--</span>
+                    <span class="unit">°F</span>
+                </div>
             </div>
             <div class="metric-card">
                 <h3>Humedad</h3>
-                <div class="metric-value">67<span>%</span></div>
+                <div class="metric-value">
+                    <span id="humidity">--</span>
+                    <span class="unit">%</span>
+                </div>
             </div>
         </div>
 
@@ -49,15 +69,25 @@
             <div class="chart-card gas-monitor">
                 <h3>Medidor de gas</h3>
                 <div class="monitor-display">
-                    <div class="co2-value">508</div>
+                    <div id="co2Value" class="co2-value">---</div>
                     <div class="co2-unit">PPM</div>
+                    <div class="monitor-details">
+                        <div>
+                            <span>Temp</span>
+                            <div id="gasTemp">--°C</div>
+                        </div>
+                        <div>
+                            <span>RH</span>
+                            <div id="gasHumidity">--%</div>
+                        </div>
+                    </div>
+                    <div class="monitor-model">PCE-AC 2000</div>
                 </div>
             </div>
         </div>
     </main>
-    <div>
-        <button>Hola</button>
-    </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
